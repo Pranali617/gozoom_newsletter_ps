@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ForgotPassword from './ForgotPassword';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function SignUp() {
     const password = data.get('password');
 
     // Constant credentials
-    const validEmail = 'psambrekar@gmail.com';
+    const validEmail = 'thavaldar@mailshell.com';
     const validPassword = '123';
 
     if (email === validEmail && password === validPassword) {
@@ -28,7 +29,7 @@ export default function SignUp() {
       });
 
       // Navigate to the dashboard after a short delay to allow the toast to be seen
-      setTimeout(() => navigate('/dashboard'), 2100);
+      setTimeout(() => navigate('/dashboard'), 3100);
     } else {
       toast.error('Invalid email or password. Please try again.', {
         position: "top-center",
@@ -42,6 +43,10 @@ export default function SignUp() {
     }
   };
 
+  const handleForgotPassword = () => {
+    navigate('/forgot-password');
+  };
+
   return (
     <div className="py-16 bg-white">
       <div className="flex flex-col lg:flex-row mx-auto max-w-5xl">
@@ -52,9 +57,9 @@ export default function SignUp() {
               Gozoom RSS News Alerts is your <span className="text-blue-500 font-bold">FREE</span> daily news feed for up-to-date information from the CyberSecurity and AI World.
             </p>
             <ul className="mt-4 list-none space-y-2">
-              <li>📈 Get the latest on high productivity AI prompts</li>
-              <li>🔒 Find out which latest CyberSecurity threats affect you</li>
-              <li>💡 Learn how to efficiently use ChatGPT, Google Gemini, Groq, Llama, and many more LLM tools</li>
+              <li>📈 Get the latest updates on AI productivity tools</li>
+              <li>🔒 Stay aware of the latest CyberSecurity threats</li>
+              <li>💡 Learn to use tools like ChatGPT, Google Gemini, and more</li>
             </ul>
           </div>
         </div>
@@ -74,16 +79,22 @@ export default function SignUp() {
             <div className="mt-8">
               <form onSubmit={handleSubmit} className="flex flex-col">
                 <div className="mt-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                  <label className="block text-gray-700 text-sm font-bold mb-2 text-left">Email Address</label>
                   <input name="email" className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" required />
                 </div>
                 <div className="mt-4">
                   <div className="flex justify-between">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                    <a href="#" className="text-xs  text-blue-500 hover:text-blue-800">Forget Password?</a>
+                    <label className="block text-gray-700 text-sm font-bold mb-2 text-left">Password</label>
                   </div>
                   <input name="password" className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" required />
                 </div>
+                <button
+                  type="button"
+                  className="text-xs text-blue-500 hover:text-blue-800"
+                  onClick={handleForgotPassword}
+                >
+                  Forget Password?
+                </button>
                 <div className="mt-8">
                   <button className="bg-blue-600 text-white font-bold py-2 px-4 w-full rounded hover:bg-blue-700" type="submit">Login</button>
                 </div>
