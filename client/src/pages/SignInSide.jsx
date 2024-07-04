@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ForgotPassword from './ForgotPassword';
 
-export default function SignUp() {
+export default function SignInSide() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
