@@ -20,8 +20,8 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="flex justify-center items-start h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8 mt-16">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-bold mb-6 text-center">Forgot Password</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -47,7 +47,7 @@ export default function ForgotPassword() {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <Link to="/" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-blue-500 hover:underline">
             Back to Login
           </Link>
         </div>
